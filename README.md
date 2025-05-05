@@ -15,4 +15,4 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  caesar_encryptor: ^0.1.0
+  caesar_encryptor: ^0.1.1
