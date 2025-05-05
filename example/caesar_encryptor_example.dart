@@ -5,6 +5,12 @@ void main() {
   final englishEncryptor = CaesarEncryptor(
     shift: 3,
     alphabet: Alphabet.english,
+    formattingOptions: FormattingOptions(
+      formatters: [
+        // Format the output to lowercase
+        LetterCaseFormatter(letterCase: LetterCase.lowerCase),
+      ],
+    ),
   );
 
   // Original English text
@@ -18,14 +24,20 @@ void main() {
 
   // Print the results
   print('🔤 English:');
-  print('Original:  $englishText');
-  print('Encrypted: $encryptedEnglish');
+  print('Original:       $englishText');
+  print('Encrypted:      $encryptedEnglish');
   print('Decrypted back: $decryptedEnglish\n');
 
   // Create an encryptor for the Russian alphabet with a shift of 5
   final russianEncryptor = CaesarEncryptor(
     shift: 5,
     alphabet: Alphabet.russian,
+    formattingOptions: FormattingOptions(
+      formatters: [
+        // Format the output to uppercase
+        LetterCaseFormatter(letterCase: LetterCase.upperCase),
+      ],
+    ),
   );
 
   // Original Russian text
@@ -39,7 +51,7 @@ void main() {
 
   // Print the results
   print('🔤 Russian:');
-  print('Original:  $russianText');
-  print('Encrypted: $encryptedRussian');
+  print('Original:       $russianText');
+  print('Encrypted:      $encryptedRussian');
   print('Decrypted back: $decryptedRussian');
 }

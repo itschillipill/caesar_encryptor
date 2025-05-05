@@ -1,5 +1,8 @@
 name: caesar_encryptor
-description: A simple Caesar cipher implementation.
+description: >
+  A Dart package for encrypting and decrypting text using the Caesar cipher. 
+  Supports multiple alphabets and flexible output formatting.
+
 version: 0.1.0
 homepage: https://github.com/itschillipill/caesar_encryptor
 repository: https://github.com/itschillipill/caesar_encryptor

@@ -17,11 +17,11 @@ class CipherRepositoryImpl implements CipherRepository {
   /// Core logic for both encryption and decryption
   String _caesarCipher(String text, int shift, String alphabet) {
     final int alphabetSize = alphabet.length;
-    
+
     return text.split('').map((char) {
       // Find the index of the character in the alphabet (case-insensitive)
       final int index = alphabet.indexOf(char.toUpperCase());
-      
+
       // If the character is not in the alphabet (like spaces, punctuation), return it unchanged
       if (index == -1) return char;
 
@@ -29,7 +29,8 @@ class CipherRepositoryImpl implements CipherRepository {
       final int newIndex = (index + shift) % alphabetSize;
 
       // Ensure the new character is within bounds, in case the shift results in a negative index
-      final String newChar = alphabet[newIndex < 0 ? newIndex + alphabetSize : newIndex];
+      final String newChar =
+          alphabet[newIndex < 0 ? newIndex + alphabetSize : newIndex];
 
       // Return the new character with the same case as the original character
       return char == char.toUpperCase() ? newChar : newChar.toLowerCase();
